@@ -19,9 +19,21 @@ module.exports = {
         progress: true
     },
 
+    module: {
+        loaders: [{
+            test: /\.jsx?$/,
+            include: APP_PATH,
+            loader: 'babel',
+            query: {
+                presets: ['react', 'es2015']
+            }
+        }]
+    },
+
     plugins: [
         new HtmlwebpackPlugin({
-            title: 'React Demo'
+            title: 'React Demo',
+            template: 'index.html'
         })
     ]
 };
